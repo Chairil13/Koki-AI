@@ -103,7 +103,7 @@ class FormMealCreation extends StatelessWidget {
                           if (image == null) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                content: Text('Terjadi kesalahan'),
+                                content: Text('Harap pilih foto'),
                               ),
                             );
                             return;
@@ -128,7 +128,7 @@ class FormMealCreation extends StatelessWidget {
                           if (image == null) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                content: Text('Terjadi kesalahan'),
+                                content: Text('Harap ambil foto'),
                               ),
                             );
                             return;
@@ -158,7 +158,7 @@ class FormMealCreation extends StatelessWidget {
               minimumSize: const Size(320, 50),
             ),
             label: Text(
-              "Buat resepku",
+              "Buat resep",
               style: Theme.of(context).textTheme.button,
             ),
           ),

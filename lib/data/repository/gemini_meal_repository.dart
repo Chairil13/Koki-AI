@@ -28,10 +28,7 @@ class GeminiMealRepository extends AbstractMealRepository {
 
   String _generatePrompt(MealSettingsParameters parameters) {
     String prompt =
-        '''You are a very experienced chef. I want to have a 3 options for a meal using only the ingredients in the picture. 
-  I need the receipt step by step to easily understand it and format me using only markdown. 
-  I want the quantity of the ingredients for ${parameters.people.toString()} people and I only want to spend a maximum of ${parameters.maxTimeCooking.toString()} minutes to make the meal. Please considering to answer in Bahasa Indonesia and give the YouTube link tutorial related to the receipt
-  ''';
+        '''You are a very experienced chef. I want to have a 3 options for a meal using only the ingredients in the picture. I need the recipe step by step to easily understand it and format me using only markdown, please considering to answer in Bahasa Indonesia, also if the image not related to the food ingredients then you should not give the recipe. I want the quantity of the ingredients for ${parameters.people.toString()} people and I only want to spend a maximum of ${parameters.maxTimeCooking.toString()} minutes to make the meal. I want you to provide health benefits and nutritional content from the recipes provided.''';
 
     if (parameters.intoleranceOrLimits != null) {
       prompt +=

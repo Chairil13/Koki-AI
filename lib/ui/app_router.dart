@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pic_2_plate_ai/data/repository/gemini_meal_repository.dart';
 import 'package:pic_2_plate_ai/domain/cubit/meal/meal_cubit.dart';
+import 'package:pic_2_plate_ai/ui/pages/about_dev/about_dev_page.dart';
 import 'package:pic_2_plate_ai/ui/pages/meal_creation/meal_creation_page.dart';
 import 'package:pic_2_plate_ai/ui/pages/onboarding/onboarding_page.dart';
 
 abstract class RoutesNames {
   static const String onboarding = '/';
   static const String mealCreation = '/meal-creation';
+  static const String aboutDev = '/about-dev';
 }
 
 class AppRouter {
@@ -28,6 +30,8 @@ class AppRouter {
             child: const MealCreationPage(),
           ),
         );
+      case RoutesNames.aboutDev:
+        return MaterialPageRoute(builder: (_) => const AboutDevPage());
       default:
         throw StateError('Route tidak ditemukan');
     }

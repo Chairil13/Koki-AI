@@ -32,16 +32,21 @@ class MealCreationPage extends StatelessWidget {
               child: switch (state) {
                 MealSettingsParameters() => FormMealCreation(state: state),
                 MealLoading() => const Center(child: LoadingMealWidget()),
-                MealLoaded() => Markdown(data: state.meals.first),
+                MealLoaded() => Markdown(
+                    data: state.meals.first,
+                    styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context))
+                        .copyWith(p: Theme.of(context).textTheme.bodyMedium),
+                    selectable: true,
+                  ),
                 ErrorState() => Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      SelectableText(
                         'Terjadi kesalahan',
                         style: Theme.of(context).textTheme.displayMedium,
                       ),
                       const SizedBox(height: 8),
-                      Text(
+                      SelectableText(
                         state.error.toString(),
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),

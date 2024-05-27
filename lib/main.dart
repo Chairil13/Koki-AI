@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Resep pintar',
+      title: 'Koki AI',
       theme: AppTheme.getLight(),
       initialRoute: AppRouter.getNestedRouteName(),
       onGenerateRoute: AppRouter().generateRoute,

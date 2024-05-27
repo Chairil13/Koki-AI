@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pic_2_plate_ai/ui/app_router.dart';
 
 class OnboardingPage extends StatelessWidget {
-  const OnboardingPage({
-    Key? key,
-  }) : super(key: key);
+  const OnboardingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,11 +56,29 @@ class OnboardingPage extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context)
-                              .pushReplacementNamed(RoutesNames.mealCreation);
+                          Navigator.of(context).pushNamed(RoutesNames.aboutDev);
                         },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(150, 50),
+                        ),
                         child: Text(
-                          "Buat resep masakanmu sekarang!",
+                          "About Dev",
+                          style: theme.textTheme.bodyLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushNamed(RoutesNames.mealCreation);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(150, 50),
+                        ),
+                        child: Text(
+                          "Start",
                           style: theme.textTheme.bodyLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
